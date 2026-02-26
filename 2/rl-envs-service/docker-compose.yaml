@@ -1,0 +1,19 @@
+services:
+  rl-envs-service:
+    build:
+      context: ..
+      dockerfile: rl-envs-service/Dockerfile
+    container_name: rl_envs_api
+    ports:
+      - 8001:8001
+    volumes:
+      - ./openapi_spec:/app/openapi_spec
+      - ./artifacts:/app/artifacts
+    env_file:
+      - .env
+    networks:
+      - test
+
+networks:
+  test:
+    driver: bridge

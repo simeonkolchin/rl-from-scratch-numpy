@@ -1,0 +1,306 @@
+openapi: 3.1.0
+info:
+  title: RL Envs Service API
+  description: Service for generating/verifying RL environment tasks.
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      tags:
+      - Health
+      summary: Проверить работоспособность
+      operationId: health_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /api/v1/envs:
+    get:
+      tags:
+      - Envs
+      summary: Список доступных сред
+      operationId: list_envs_api_v1_envs_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListEnvsResponse'
+  /api/v1/envs/{env_name}/generate:
+    post:
+      tags:
+      - Envs
+      summary: Сгенерировать задачи
+      operationId: generate_api_v1_envs__env_name__generate_post
+      parameters:
+      - name: env_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Env Name
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/envs/{env_name}/verify:
+    post:
+      tags:
+      - Envs
+      summary: Проверить решение
+      operationId: verify_api_v1_envs__env_name__verify_post
+      parameters:
+      - name: env_name
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Env Name
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyRequest'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerifyResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /api/v1/datasets/test:
+    post:
+      tags:
+      - Datasets
+      summary: Сгенерировать фиксированные тест-датасеты
+      operationId: generate_test_datasets_api_v1_datasets_test_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerateTestDatasetsRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerateTestDatasetsResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    EnvInfo:
+      properties:
+        name:
+          type: string
+          title: Name
+        description:
+          type: string
+          title: Description
+        hyperparams:
+          additionalProperties:
+            type: string
+          type: object
+          title: Hyperparams
+      type: object
+      required:
+      - name
+      - description
+      - hyperparams
+      title: EnvInfo
+    GenerateRequest:
+      properties:
+        num_of_questions:
+          type: integer
+          minimum: 1.0
+          title: Num Of Questions
+          default: 100
+        max_attempts:
+          type: integer
+          minimum: 1.0
+          title: Max Attempts
+          default: 100
+        difficulty:
+          anyOf:
+          - type: integer
+            maximum: 10.0
+            minimum: 1.0
+          - type: 'null'
+          title: Difficulty
+          default: 1
+        hyperparams:
+          additionalProperties: true
+          type: object
+          title: Hyperparams
+        seed:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Seed
+      type: object
+      title: GenerateRequest
+    GenerateResponse:
+      properties:
+        items:
+          items:
+            additionalProperties: true
+            type: object
+          type: array
+          title: Items
+      type: object
+      required:
+      - items
+      title: GenerateResponse
+    GenerateTestDatasetsRequest:
+      properties:
+        out_dir:
+          type: string
+          title: Out Dir
+          description: Relative to /app/artifacts unless absolute.
+          default: datasets
+        difficulties:
+          items:
+            type: integer
+          type: array
+          title: Difficulties
+        n_per_difficulty:
+          type: integer
+          minimum: 1.0
+          title: N Per Difficulty
+          default: 200
+        seed:
+          type: integer
+          title: Seed
+          default: 1234
+        force:
+          type: boolean
+          title: Force
+          default: false
+      type: object
+      title: GenerateTestDatasetsRequest
+    GenerateTestDatasetsResponse:
+      properties:
+        written_files:
+          items:
+            type: string
+          type: array
+          title: Written Files
+      type: object
+      title: GenerateTestDatasetsResponse
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    ListEnvsResponse:
+      properties:
+        envs:
+          items:
+            $ref: '#/components/schemas/EnvInfo'
+          type: array
+          title: Envs
+      type: object
+      required:
+      - envs
+      title: ListEnvsResponse
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    VerifyRequest:
+      properties:
+        data:
+          additionalProperties: true
+          type: object
+          title: Data
+          description: Data JSON payload
+        test_solution:
+          type: string
+          title: Test Solution
+      type: object
+      required:
+      - data
+      - test_solution
+      title: VerifyRequest
+    VerifyResponse:
+      properties:
+        correct:
+          type: boolean
+          title: Correct
+        expected:
+          type: string
+          title: Expected
+        extracted:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Extracted
+        error:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error
+      type: object
+      required:
+      - correct
+      - expected
+      title: VerifyResponse
+tags:
+- name: Health
+  description: Health-check приложения.
+- name: Envs
+  description: Генерация и верификация задач.
+- name: Datasets
+  description: Генерация фиксированных тестовых датасетов.

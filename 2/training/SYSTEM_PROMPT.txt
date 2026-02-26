@@ -1,0 +1,8 @@
+Respond in the following format:
+<think>
+...
+</think>
+<answer>
+...
+</answer>
+
