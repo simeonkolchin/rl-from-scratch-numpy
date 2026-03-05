@@ -1,0 +1,23 @@
+model_name: Qwen/Qwen2.5-0.5B-Instruct
+system_prompt_path: training/SYSTEM_PROMPT.txt
+sampling:
+  temperature: 1.0
+  top_p: 0.95
+  max_tokens: 256
+scale:
+  train_full_size: 4000
+  val_full_size: 300
+  hard_train_size: 512
+  hard_val_size: 128
+training:
+  sft_epochs: 1
+  sft_lr: 2e-4
+  lora_r: 16
+  grpo_steps: 300
+  sft_grpo_steps: 200
+  rlplus_steps: 300
+  lambda_off: 0.5
+  off_min_clip: 0.2
+  off_max_clip: 5.0
+  batch_size: 1
+  seed: 42
