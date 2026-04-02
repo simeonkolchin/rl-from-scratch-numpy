@@ -1,0 +1,89 @@
+{
+  "alpha_config": {
+    "num_features": 24,
+    "hidden_dim": 2,
+    "alpha": 1.0,
+    "expected_l0": 3.0,
+    "max_prob": 0.95
+  },
+  "alpha_train_config": {
+    "steps": 2000,
+    "batch_size": 512,
+    "learning_rate": 0.025,
+    "weight_decay": 0.0001,
+    "log_every": 100,
+    "snapshot_steps": []
+  },
+  "superposition_train_config": {
+    "steps": 1500,
+    "batch_size": 512,
+    "learning_rate": 0.025,
+    "weight_decay": 0.0001,
+    "log_every": 100,
+    "snapshot_steps": []
+  },
+  "alpha_aggregates": [
+    {
+      "alpha": 0.3,
+      "alive_count_mean": 5.0,
+      "alive_count_std": 0.0,
+      "head_tail_norm_ratio_mean": 32.76465888751267,
+      "head_tail_norm_ratio_std": 7.022924572926216,
+      "top1_eigen_share_mean": 0.5422041710461548,
+      "top1_eigen_share_std": 0.00635158856218435,
+      "mean_abs_cosine_mean": 0.6389916323907713,
+      "mean_abs_cosine_std": 0.015391829772298924
+    },
+    {
+      "alpha": 1.0,
+      "alive_count_mean": 4.0,
+      "alive_count_std": 0.0,
+      "head_tail_norm_ratio_mean": 31.086271235191294,
+      "head_tail_norm_ratio_std": 6.4090988771965245,
+      "top1_eigen_share_mean": 0.5364466658020094,
+      "top1_eigen_share_std": 0.02421808024730649,
+      "mean_abs_cosine_mean": 0.6317191188696355,
+      "mean_abs_cosine_std": 0.016652150053239764
+    },
+    {
+      "alpha": 2.0,
+      "alive_count_mean": 4.0,
+      "alive_count_std": 0.0,
+      "head_tail_norm_ratio_mean": 20.155854125539477,
+      "head_tail_norm_ratio_std": 7.645702819502493,
+      "top1_eigen_share_mean": 0.5601887616257263,
+      "top1_eigen_share_std": 0.02908730898666431,
+      "mean_abs_cosine_mean": 0.6602426188128477,
+      "mean_abs_cosine_std": 0.04270763184528922
+    }
+  ],
+  "superposition_aggregates": [
+    {
+      "superposition_ratio": 3.0,
+      "mean_abs_cosine_mean": 0.3156133082708927,
+      "mean_abs_cosine_std": 0.025049302830697152,
+      "alive_count_mean": 8.0,
+      "alive_count_std": 0.816496580927726,
+      "top1_eigen_share_mean": 0.3010436948320206,
+      "top1_eigen_share_std": 0.006045614532111739
+    },
+    {
+      "superposition_ratio": 6.0,
+      "mean_abs_cosine_mean": 0.3973261010273421,
+      "mean_abs_cosine_std": 0.007669506990525919,
+      "alive_count_mean": 9.0,
+      "alive_count_std": 0.0,
+      "top1_eigen_share_mean": 0.30814178082937355,
+      "top1_eigen_share_std": 0.008901439198939315
+    },
+    {
+      "superposition_ratio": 12.0,
+      "mean_abs_cosine_mean": 0.4373061427719405,
+      "mean_abs_cosine_std": 0.01994536001115125,
+      "alive_count_mean": 11.0,
+      "alive_count_std": 0.816496580927726,
+      "top1_eigen_share_mean": 0.3072280153188,
+      "top1_eigen_share_std": 0.012111161945352921
+    }
+  ]
+}

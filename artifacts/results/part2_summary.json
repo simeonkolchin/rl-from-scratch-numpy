@@ -1,0 +1,332 @@
+{
+  "baseline_config": {
+    "num_features": 24,
+    "hidden_dim": 4,
+    "alpha": 1.2,
+    "expected_l0": 2.5,
+    "max_prob": 0.95
+  },
+  "baseline_train": {
+    "steps": 1500,
+    "batch_size": 512,
+    "learning_rate": 0.025,
+    "weight_decay": 0.0001,
+    "log_every": 100,
+    "snapshot_steps": []
+  },
+  "sae_train": {
+    "steps": 1200,
+    "batch_size": 512,
+    "learning_rate": 0.01,
+    "weight_decay": 0.0,
+    "log_every": 50
+  },
+  "heatmap_aggregates": [
+    {
+      "latent_dim": 8,
+      "l1_coeff": 0.0,
+      "ev_mean": 0.989333330441421,
+      "ev_std": 0.001694459688055891,
+      "latent_density_mean": 0.79180908203125,
+      "latent_density_std": 0.05804801686508548
+    },
+    {
+      "latent_dim": 8,
+      "l1_coeff": 0.01,
+      "ev_mean": 0.9285587128028657,
+      "ev_std": 0.008596124715416011,
+      "latent_density_mean": 0.616546630859375,
+      "latent_density_std": 0.027667815974264928
+    },
+    {
+      "latent_dim": 8,
+      "l1_coeff": 0.03,
+      "ev_mean": 0.9207161372331707,
+      "ev_std": 0.031827419597793574,
+      "latent_density_mean": 0.3910929361979167,
+      "latent_density_std": 0.04249870766205084
+    },
+    {
+      "latent_dim": 8,
+      "l1_coeff": 0.1,
+      "ev_mean": 0.833046063658196,
+      "ev_std": 0.04649636921551403,
+      "latent_density_mean": 0.2938435872395833,
+      "latent_density_std": 0.045433901887167866
+    },
+    {
+      "latent_dim": 8,
+      "l1_coeff": 0.3,
+      "ev_mean": 0.6709753210215305,
+      "ev_std": 0.05087445644565324,
+      "latent_density_mean": 0.20711263020833334,
+      "latent_density_std": 0.039028600712449305
+    },
+    {
+      "latent_dim": 8,
+      "l1_coeff": 1.0,
+      "ev_mean": 0.24452239803720524,
+      "ev_std": 0.01572533756407632,
+      "latent_density_mean": 0.044413248697916664,
+      "latent_density_std": 0.010051557349244827
+    },
+    {
+      "latent_dim": 12,
+      "l1_coeff": 0.0,
+      "ev_mean": 0.9933559232209593,
+      "ev_std": 0.001449628944824388,
+      "latent_density_mean": 0.8054267035590278,
+      "latent_density_std": 0.038948033832445904
+    },
+    {
+      "latent_dim": 12,
+      "l1_coeff": 0.01,
+      "ev_mean": 0.9841983974920449,
+      "ev_std": 0.0012249706513167082,
+      "latent_density_mean": 0.4750637478298611,
+      "latent_density_std": 0.011819831313612776
+    },
+    {
+      "latent_dim": 12,
+      "l1_coeff": 0.03,
+      "ev_mean": 0.9616845677984474,
+      "ev_std": 0.001096838407415125,
+      "latent_density_mean": 0.3651529947916667,
+      "latent_density_std": 0.017842885190117556
+    },
+    {
+      "latent_dim": 12,
+      "l1_coeff": 0.1,
+      "ev_mean": 0.8898232726121811,
+      "ev_std": 0.004502137245013825,
+      "latent_density_mean": 0.25537109375,
+      "latent_density_std": 0.029203662229435642
+    },
+    {
+      "latent_dim": 12,
+      "l1_coeff": 0.3,
+      "ev_mean": 0.7101728747775832,
+      "ev_std": 0.005851777046951643,
+      "latent_density_mean": 0.17490641276041666,
+      "latent_density_std": 0.01645719801934498
+    },
+    {
+      "latent_dim": 12,
+      "l1_coeff": 1.0,
+      "ev_mean": 0.3000348633746113,
+      "ev_std": 0.007145380291560766,
+      "latent_density_mean": 0.04694959852430555,
+      "latent_density_std": 0.0004863938009179971
+    },
+    {
+      "latent_dim": 24,
+      "l1_coeff": 0.0,
+      "ev_mean": 0.9942518935300148,
+      "ev_std": 0.0008644311204554095,
+      "latent_density_mean": 0.5153333875868055,
+      "latent_density_std": 0.05022573681053909
+    },
+    {
+      "latent_dim": 24,
+      "l1_coeff": 0.01,
+      "ev_mean": 0.9852871829079884,
+      "ev_std": 0.0006166108587071738,
+      "latent_density_mean": 0.3033854166666667,
+      "latent_density_std": 0.023201687750809847
+    },
+    {
+      "latent_dim": 24,
+      "l1_coeff": 0.03,
+      "ev_mean": 0.9637526368585089,
+      "ev_std": 0.0008726701022356752,
+      "latent_density_mean": 0.21107652452256945,
+      "latent_density_std": 0.018551819439002196
+    },
+    {
+      "latent_dim": 24,
+      "l1_coeff": 0.1,
+      "ev_mean": 0.8924408962817543,
+      "ev_std": 0.001688503841560578,
+      "latent_density_mean": 0.1515265570746528,
+      "latent_density_std": 0.009486236732241297
+    },
+    {
+      "latent_dim": 24,
+      "l1_coeff": 0.3,
+      "ev_mean": 0.7077374272898697,
+      "ev_std": 0.001871742923352905,
+      "latent_density_mean": 0.10811360677083333,
+      "latent_density_std": 0.0012671499932898453
+    },
+    {
+      "latent_dim": 24,
+      "l1_coeff": 1.0,
+      "ev_mean": 0.3266684399844422,
+      "ev_std": 0.0023145446848541022,
+      "latent_density_mean": 0.033365885416666664,
+      "latent_density_std": 0.00021770156411776424
+    },
+    {
+      "latent_dim": 48,
+      "l1_coeff": 0.0,
+      "ev_mean": 0.9954700473119953,
+      "ev_std": 0.0011475370016992962,
+      "latent_density_mean": 0.40985785590277773,
+      "latent_density_std": 0.01825538820060307
+    },
+    {
+      "latent_dim": 48,
+      "l1_coeff": 0.01,
+      "ev_mean": 0.9858184154484401,
+      "ev_std": 0.000589921749135867,
+      "latent_density_mean": 0.22107611762152776,
+      "latent_density_std": 0.010058173395230255
+    },
+    {
+      "latent_dim": 48,
+      "l1_coeff": 0.03,
+      "ev_mean": 0.9646279155542015,
+      "ev_std": 0.00042006020310647986,
+      "latent_density_mean": 0.16464572482638892,
+      "latent_density_std": 0.010663396484777985
+    },
+    {
+      "latent_dim": 48,
+      "l1_coeff": 0.1,
+      "ev_mean": 0.8903705468189793,
+      "ev_std": 0.0030739835336612005,
+      "latent_density_mean": 0.10067579481336807,
+      "latent_density_std": 0.0034887793285839795
+    },
+    {
+      "latent_dim": 48,
+      "l1_coeff": 0.3,
+      "ev_mean": 0.7135225699063348,
+      "ev_std": 0.0009472358807901959,
+      "latent_density_mean": 0.0654144287109375,
+      "latent_density_std": 0.004962078193067125
+    },
+    {
+      "latent_dim": 48,
+      "l1_coeff": 1.0,
+      "ev_mean": 0.32927151596265747,
+      "ev_std": 0.0032037279170891828,
+      "latent_density_mean": 0.020913018120659724,
+      "latent_density_std": 0.0009751869450896339
+    }
+  ],
+  "model_aggregates": [
+    {
+      "expected_l0": 1.5,
+      "hidden_dim": 2,
+      "ev_mean": 0.8922355417325739,
+      "ev_std": 0.006206590349447565,
+      "mean_abs_cosine_mean": 0.6328491886806978,
+      "mean_abs_cosine_std": 0.02093784806046444,
+      "hidden_rank_pr_mean": 1.9513050408162147,
+      "hidden_rank_pr_std": 0.04479150670306259,
+      "top1_eigen_share_mean": 0.5784141147312724,
+      "top1_eigen_share_std": 0.049001575386318066
+    },
+    {
+      "expected_l0": 1.5,
+      "hidden_dim": 4,
+      "ev_mean": 0.8798938832498645,
+      "ev_std": 0.004472715831419153,
+      "mean_abs_cosine_mean": 0.41142561822509843,
+      "mean_abs_cosine_std": 0.0004087236558472784,
+      "hidden_rank_pr_mean": 3.7853075601568755,
+      "hidden_rank_pr_std": 0.03802283061922988,
+      "top1_eigen_share_mean": 0.33771967654695206,
+      "top1_eigen_share_std": 0.005798845324385727
+    },
+    {
+      "expected_l0": 1.5,
+      "hidden_dim": 6,
+      "ev_mean": 0.8730545178927166,
+      "ev_std": 0.0030424665877665544,
+      "mean_abs_cosine_mean": 0.3043940680396109,
+      "mean_abs_cosine_std": 0.004784877787552851,
+      "hidden_rank_pr_mean": 5.4923254923513385,
+      "hidden_rank_pr_std": 0.03628912597027024,
+      "top1_eigen_share_mean": 0.26070490871658153,
+      "top1_eigen_share_std": 0.003384024897594241
+    },
+    {
+      "expected_l0": 2.5,
+      "hidden_dim": 2,
+      "ev_mean": 0.8909507570253218,
+      "ev_std": 0.010872996237532767,
+      "mean_abs_cosine_mean": 0.6293461899325384,
+      "mean_abs_cosine_std": 0.006097652772795116,
+      "hidden_rank_pr_mean": 1.9868597170861888,
+      "hidden_rank_pr_std": 0.009118233372210047,
+      "top1_eigen_share_mean": 0.540713265969184,
+      "top1_eigen_share_std": 0.018608501794245842
+    },
+    {
+      "expected_l0": 2.5,
+      "hidden_dim": 4,
+      "ev_mean": 0.8923317279906647,
+      "ev_std": 0.001145224008239561,
+      "mean_abs_cosine_mean": 0.41350590746930127,
+      "mean_abs_cosine_std": 0.016887603587917317,
+      "hidden_rank_pr_mean": 3.866902754374235,
+      "hidden_rank_pr_std": 0.02004935035529003,
+      "top1_eigen_share_mean": 0.30887638004741325,
+      "top1_eigen_share_std": 0.008771120824738337
+    },
+    {
+      "expected_l0": 2.5,
+      "hidden_dim": 6,
+      "ev_mean": 0.8816358564551362,
+      "ev_std": 0.0018223302733533587,
+      "mean_abs_cosine_mean": 0.31402587618230343,
+      "mean_abs_cosine_std": 0.014738993827321027,
+      "hidden_rank_pr_mean": 5.8333849245449585,
+      "hidden_rank_pr_std": 0.018756855668227254,
+      "top1_eigen_share_mean": 0.19916411908694362,
+      "top1_eigen_share_std": 0.006366382979738628
+    },
+    {
+      "expected_l0": 4.0,
+      "hidden_dim": 2,
+      "ev_mean": 0.8773759918325507,
+      "ev_std": 0.005365660393934077,
+      "mean_abs_cosine_mean": 0.6329346916388127,
+      "mean_abs_cosine_std": 0.00887497068735384,
+      "hidden_rank_pr_mean": 1.9642768897695098,
+      "hidden_rank_pr_std": 0.04606479849657589,
+      "top1_eigen_share_mean": 0.5428394491599946,
+      "top1_eigen_share_std": 0.037272347760497655
+    },
+    {
+      "expected_l0": 4.0,
+      "hidden_dim": 4,
+      "ev_mean": 0.8914841740509623,
+      "ev_std": 0.0047914381848985985,
+      "mean_abs_cosine_mean": 0.38815413116264663,
+      "mean_abs_cosine_std": 0.002048762254391559,
+      "hidden_rank_pr_mean": 3.9459925443668573,
+      "hidden_rank_pr_std": 0.0393067775285292,
+      "top1_eigen_share_mean": 0.28467051987519176,
+      "top1_eigen_share_std": 0.011295472660169212
+    },
+    {
+      "expected_l0": 4.0,
+      "hidden_dim": 6,
+      "ev_mean": 0.8849110557625343,
+      "ev_std": 0.0015869840449648557,
+      "mean_abs_cosine_mean": 0.29948631718192037,
+      "mean_abs_cosine_std": 0.009597501016161513,
+      "hidden_rank_pr_mean": 5.886777460064614,
+      "hidden_rank_pr_std": 0.052451319692788864,
+      "top1_eigen_share_mean": 0.20456494457696583,
+      "top1_eigen_share_std": 0.013395235463547905
+    }
+  ],
+  "correlations": {
+    "ev_vs_mean_abs_cosine": 0.2469693960343807,
+    "ev_vs_hidden_rank_pr": -0.30469945635652057
+  }
+}
